@@ -14,6 +14,20 @@ cc_library_shared {
 }
 
 cc_library_shared {
+    name: "libqti_vndfwk_detect_vendor",
+    srcs: ["vndfwk-detect.c"],
+    shared_libs: ["libcutils"],
+    vendor: true,
+    export_include_dirs: ["."],
+
+    compile_multilib: "both",
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}
+
+cc_library_shared {
     name: "libvndfwk_detect_jni.qti",
     srcs: ["jni/com_qualcomm_qti_VndFwkDetect.cpp"],
     shared_libs: [
